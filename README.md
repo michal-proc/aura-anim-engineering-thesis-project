@@ -1,5 +1,7 @@
-# text-to-video-service
-A monorepo for a text-to-video generation application.
+# AuraAnim - engineering thesis
+Engineering thesis project focused on designing and implementing a full-stack application for generating videos from text descriptions and other parameters from user. The project explores modern text-to-video approaches based on deep learning models and analyzes trade-offs between model quality and computational cost.
+
+The system is built around a scalable backend using Python, FastAPI, and Ray, enabling parallel video generation and efficient model serving across a cluster. The system includes a Next.js-based web frontend that enables users to generate, preview, and manage videos. The backend integrates Stable Diffusion with AnimateDiff for text-to-video generation, using PostgreSQL for metadata persistence and MinIO for scalable object storage of generated media.
 
 # CUDA WSL2 setup guide
 In order to run CUDA-enabled containers the following dependencies are necessary:
