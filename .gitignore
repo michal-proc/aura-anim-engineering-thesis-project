@@ -78,6 +78,7 @@ samples/
 # -------------- Video/ML Specific -----------------
 
 # Generated videos
+*.mp4
 *.avi
 *.mov
 *.mkv
