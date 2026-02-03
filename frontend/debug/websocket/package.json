@@ -1,0 +1,15 @@
+{
+  "name": "debug",
+  "version": "1.0.0",
+  "main": "ws-test.js",
+  "scripts": {
+    "start": "node ws-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

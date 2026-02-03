@@ -1,0 +1,1257 @@
+{
+  "uuid": "b248cc6b-5f21-43d5-b2aa-d2e6d24bcfbc",
+  "name": "Aura Anim",
+  "port": 40000,
+  "hostname": "0.0.0.0",
+  "endpointPrefix": "",
+  "latency": 0,
+  "headers": [
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    },
+    {
+      "key": "Access-Control-Expose-Headers",
+      "value": "Content-Type, Accept-Ranges, Content-Range, Content-Length"
+    }
+  ],
+  "proxyMode": false,
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "routes": [
+    {
+      "uuid": "e8af8e97-2b20-42b9-b002-c965995357fd",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/auth/register",
+      "responses": [
+        {
+          "uuid": "dc7daa0f-b259-4a23-a74a-689962ef4d1a",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 1,\n    \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n    \"username\": \"michal\",\n    \"full_name\": \"Michał Proc\",\n    \"email\": \"michal@example.com\",\n    \"is_active\": true,\n    \"registered_at\": \"2025-02-01T12:34:56Z\",\n    \"generations\": 5,\n    \"is_public\": true,\n    \"description\": \"Motion + genAI\",\n    \"links\": [\n      \"https://github.com/michal\",\n      \"https://x.com/michal\"\n    ]\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "56061319-f6c1-4b58-97fe-39f28da4bfbe",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/auth/login",
+      "responses": [
+        {
+          "uuid": "f371304d-1a82-4247-9093-c55add8ed49b",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"user\": {\n      \"id\": 1,\n      \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n      \"username\": \"michal\",\n      \"full_name\": \"Name Surname\",\n      \"email\": \"test@example.com\",\n      \"is_active\": true,\n      \"registered_at\": \"2025-02-01T12:34:56Z\",\n      \"generations\": 5,\n      \"is_public\": true,\n      \"description\": \"Motion + genAI\",\n      \"links\": [\n        \"https://github.com/michal\",\n        \"https://x.com/michal\"\n      ]\n    },\n    \"refresh_token\": \"token\",\n    \"access_token\": \"token\",\n    \"token_type\": \"bearer\"\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "45b95ec0-84c2-46fc-ac8e-b66eb50da4a1",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/auth/logout",
+      "responses": [
+        {
+          "uuid": "a3bbef64-8875-423d-a2db-4ff6fdbe3ac6",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": null\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "34a2acc5-09b0-40b1-8b9a-b2e24cbac0b3",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/auth/me",
+      "responses": [
+        {
+          "uuid": "91cfb583-f046-4205-bc37-bec05c9a9fc0",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 1,\n    \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n    \"username\": \"michal\",\n    \"full_name\": \"Michał Proc\",\n    \"email\": \"michal@example.com\",\n    \"is_active\": true,\n    \"registered_at\": \"2025-02-01T12:34:56Z\",\n    \"generations\": 5,\n    \"is_public\": true,\n    \"description\": \"Motion + genAI\",\n    \"links\": [\n      \"https://github.com/michal\",\n      \"https://x.com/michal\"\n    ]\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "d36da5b7-4b6a-40ad-b351-1093682669d2",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/auth/forgot-password",
+      "responses": [
+        {
+          "uuid": "85e4aae8-10a5-496f-a062-0388bb38611c",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": null\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "9eab9089-d618-4e83-b350-849718387a60",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/auth/reset-password",
+      "responses": [
+        {
+          "uuid": "b8ddb1cf-4688-4670-809b-e6bd15149263",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": null\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "d892184c-75ed-4a36-a89f-a3c0897fe109",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/auth/verify-email",
+      "responses": [
+        {
+          "uuid": "1468592b-1fd9-40dd-ac87-f155db1715c8",
+          "statusCode": 302,
+          "label": "redirect",
+          "headers": [
+            {
+              "key": "Location",
+              "value": "http://localhost:3000/login?verified=1"
+            }
+          ],
+          "body": "",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "77304a6e-02a3-4807-abff-3231d822619f",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/users",
+      "responses": [
+        {
+          "uuid": "087cc819-2dd0-4e8a-9b28-c2fedbdae357",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n      \"username\": \"michal\",\n      \"full_name\": \"Michał Proc\",\n      \"email\": \"michal@example.com\",\n      \"is_active\": true,\n      \"registered_at\": \"2025-02-01T12:34:56Z\",\n      \"generations\": 5,\n      \"is_public\": true,\n      \"description\": \"Motion + genAI\",\n      \"links\": [\n        \"https://github.com/michal\",\n        \"https://x.com/michal\"\n      ]\n    },\n    {\n      \"id\": 2,\n      \"avatar\": null,\n      \"username\": \"aga\",\n      \"full_name\": \"Aga K\",\n      \"email\": \"aga@example.com\",\n      \"is_active\": true,\n      \"registered_at\": \"2025-03-10T09:00:00Z\",\n      \"generations\": 2,\n      \"is_public\": true,\n      \"description\": null,\n      \"links\": []\n    }\n  ]\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "4f9862a4-86f0-4072-9ab3-83bfa7d93374",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/users/:id",
+      "responses": [
+        {
+          "uuid": "ccb1dc31-928e-46cb-aa4f-82a0bb63ae93",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 1,\n    \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n    \"username\": \"michal\",\n    \"full_name\": \"Michał Proc\",\n    \"email\": \"michal@example.com\",\n    \"is_active\": true,\n    \"registered_at\": \"2025-02-01T12:34:56Z\",\n    \"generations\": 5,\n    \"is_public\": true,\n    \"description\": \"Motion + genAI\",\n    \"links\": [\n      \"https://github.com/michal\",\n      \"https://x.com/michal\"\n    ],\n    \"videos\": [\n      {\n        \"id\": 101,\n        \"user_id\": 1,\n        \"folder_id\": 11,\n        \"user\": {\n          \"id\": 1,\n          \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n          \"username\": \"michal\",\n          \"full_name\": \"Michał Proc\",\n          \"email\": \"michal@example.com\",\n          \"is_active\": true,\n          \"registered_at\": \"2025-02-01T12:34:56Z\",\n          \"generations\": 5,\n          \"is_public\": true,\n          \"description\": \"Motion + genAI\",\n          \"links\": [\n            \"https://github.com/michal\",\n            \"https://x.com/michal\"\n          ]\n        },\n        \"folder\": {\n          \"id\": 11,\n          \"user_id\": 1,\n          \"parent_id\": 10,\n          \"name\": \"Reels\",\n          \"color\": \"#06B6D4\",\n          \"folders_count\": 0,\n          \"videos_count\": 1,\n          \"created_at\": \"2025-10-01T09:00:00Z\"\n        },\n        \"name\": \"Neon city loop\",\n        \"description\": \"Short neon loop\",\n        \"avatar\": \"https://cdn.local/thumbs/101.jpg\",\n        \"is_shared\": true,\n        \"job\": {\n          \"id\": 1001,\n          \"video_id\": 101,\n          \"video\": {\n            \"id\": 101,\n            \"name\": \"Neon city loop\"\n          },\n          \"status\": \"completed\",\n          \"progress_percentage\": 100.0,\n          \"stage\": \"upload\",\n          \"current_step\": null,\n          \"eta_seconds\": null,\n          \"error_message\": null,\n          \"file_size_bytes\": 12345678,\n          \"generation_time_seconds\": 45,\n          \"created_at\": \"2025-10-18T20:00:00Z\",\n          \"started_at\": \"2025-10-18T20:00:10Z\",\n          \"completed_at\": \"2025-10-18T20:00:55Z\"\n        },\n        \"created_at\": \"2025-10-18T20:00:00Z\"\n      },\n      {\n        \"id\": 102,\n        \"user_id\": 2,\n        \"folder_id\": null,\n        \"user\": {\n          \"id\": 2,\n          \"avatar\": null,\n          \"username\": \"aga\",\n          \"full_name\": \"Aga K\",\n          \"email\": \"aga@example.com\",\n          \"is_active\": true,\n          \"registered_at\": \"2025-03-10T09:00:00Z\",\n          \"generations\": 2,\n          \"is_public\": true,\n          \"description\": null,\n          \"links\": []\n        },\n        \"folder\": null,\n        \"name\": \"Ocean waves\",\n        \"description\": null,\n        \"avatar\": null,\n        \"is_shared\": false,\n        \"job\": {\n          \"id\": 1002,\n          \"video_id\": 102,\n          \"video\": {\n            \"id\": 102,\n            \"name\": \"Ocean waves\"\n          },\n          \"status\": \"processing\",\n          \"progress_percentage\": 42.5,\n          \"stage\": \"encode\",\n          \"current_step\": \"ffmpeg-pass-1\",\n          \"eta_seconds\": 120,\n          \"error_message\": null,\n          \"file_size_bytes\": null,\n          \"generation_time_seconds\": null,\n          \"created_at\": \"2025-10-19T10:00:00Z\",\n          \"started_at\": \"2025-10-19T10:00:05Z\",\n          \"completed_at\": null\n        },\n        \"created_at\": \"2025-10-19T10:00:00Z\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "7a9544d7-fc1d-4939-874e-2795a295415f",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "/users/:id",
+      "responses": [
+        {
+          "uuid": "bc205194-058f-4bb9-9064-0b3750e8864f",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 1,\n    \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n    \"username\": \"michal\",\n    \"full_name\": \"Michał Proc\",\n    \"email\": \"michal@example.com\",\n    \"is_active\": true,\n    \"registered_at\": \"2025-02-01T12:34:56Z\",\n    \"generations\": 5,\n    \"is_public\": true,\n    \"description\": \"Motion + genAI\",\n    \"links\": [\n      \"https://github.com/michal\",\n      \"https://x.com/michal\"\n    ]\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "7ae3dde9-fb21-477c-900b-c5c8794f88ca",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "/users/:id",
+      "responses": [
+        {
+          "uuid": "5db9126c-5185-4a19-a2cc-feb6ff09a894",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": null\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "c3744c4c-7616-4cf3-b2f4-d649e92d4d90",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/users/:id/analytics",
+      "responses": [
+        {
+          "uuid": "288fee73-27e7-4576-b7bc-0f77dd6846c4",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"public_videos\": 12,\n    \"likes_received\": 123,\n    \"remixes_received\": 4\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "6913bfdd-f5b6-4ebc-a121-cd5fbce4d7b2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/videos",
+      "responses": [
+        {
+          "uuid": "5d4c0940-2b02-4144-b98e-3f35439e8d8b",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": "{\r\n  \"success\": true,\r\n  \"data\": [\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n      \"job\": {\r\n        \"job_id\": \"3b09b5cd-f453-4e5d-ac6d-a485fe86cc65\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:48.369456\",\r\n        \"completed_at\": \"2025-11-05T17:52:50.876865\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 1280,\r\n          \"height\": 720,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"52a36ca8-55c3-4aea-a9d9-c7188b0369cd\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:50:19.280982\",\r\n      \"job\": {\r\n        \"job_id\": \"52a36ca8-55c3-4aea-a9d9-c7188b0369cd\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:50:19.280982\",\r\n        \"completed_at\": \"2025-11-05T17:52:10.106326\",\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 256,\r\n          \"height\": 256,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"7f14234b-c0b1-4aa0-bea4-9960acc96b59\",\r\n      \"user_id\": 1,\r\n      \"name\": \"string\",\r\n      \"created_at\": \"2025-11-05T17:05:16.759992\",\r\n      \"job\": {\r\n        \"job_id\": \"7f14234b-c0b1-4aa0-bea4-9960acc96b59\",\r\n        \"status\": \"completed\",\r\n        \"progress_percentage\": 100,\r\n        \"created_at\": \"2025-11-05T17:05:16.759992\",\r\n        \"completed_at\": null,\r\n        \"parameters\": {\r\n          \"prompt\": \"string\",\r\n          \"width\": 256,\r\n          \"height\": 256,\r\n          \"video_length\": 2,\r\n          \"fps\": 8\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "b5b49fcd-44c2-4ba0-857b-901ab1aee5d7",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/videos",
+      "responses": [
+        {
+          "uuid": "a984d95a-d2ae-4ff9-a435-6c015f494500",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 999,\n    \"job_id\": 1999\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "5bf56b97-e1b1-40e9-bd13-71a30c13b993",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/videos/:id",
+      "responses": [
+        {
+          "uuid": "b17834fe-a3c0-4c21-8dad-6d6214b15291",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 101,\n    \"user_id\": 1,\n    \"folder_id\": 11,\n    \"user\": {\n      \"id\": 1,\n      \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n      \"username\": \"michal\",\n      \"full_name\": \"Michał Proc\",\n      \"email\": \"michal@example.com\",\n      \"is_active\": true,\n      \"registered_at\": \"2025-02-01T12:34:56Z\",\n      \"generations\": 5,\n      \"is_public\": true,\n      \"description\": \"Motion + genAI\",\n      \"links\": [\n        \"https://github.com/michal\",\n        \"https://x.com/michal\"\n      ]\n    },\n    \"folder\": {\n      \"id\": 11,\n      \"user_id\": 1,\n      \"parent_id\": 10,\n      \"name\": \"Reels\",\n      \"color\": \"#06B6D4\",\n      \"folders_count\": 0,\n      \"videos_count\": 1,\n      \"created_at\": \"2025-10-01T09:00:00Z\"\n    },\n    \"name\": \"Neon city loop\",\n    \"description\": \"Short neon loop\",\n    \"avatar\": \"https://cdn.local/thumbs/101.jpg\",\n    \"is_shared\": true,\n    \"job\": {\n      \"id\": 1001,\n      \"video_id\": 101,\n      \"video\": {\n        \"id\": 101,\n        \"name\": \"Neon city loop\"\n      },\n      \"status\": \"completed\",\n      \"progress_percentage\": 100.0,\n      \"stage\": \"upload\",\n      \"current_step\": null,\n      \"eta_seconds\": null,\n      \"error_message\": null,\n      \"file_size_bytes\": 12345678,\n      \"generation_time_seconds\": 45,\n      \"created_at\": \"2025-10-18T20:00:00Z\",\n      \"started_at\": \"2025-10-18T20:00:10Z\",\n      \"completed_at\": \"2025-10-18T20:00:55Z\"\n    },\n    \"created_at\": \"2025-10-18T20:00:00Z\"\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "1d17aead-4dcb-426d-ac69-b2ec844b0814",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "/videos/:id",
+      "responses": [
+        {
+          "uuid": "c5fee474-3362-45ce-9464-9dd07c07f20b",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 101,\n    \"user_id\": 1,\n    \"folder_id\": 11,\n    \"user\": {\n      \"id\": 1,\n      \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n      \"username\": \"michal\",\n      \"full_name\": \"Michał Proc\",\n      \"email\": \"michal@example.com\",\n      \"is_active\": true,\n      \"registered_at\": \"2025-02-01T12:34:56Z\",\n      \"generations\": 5,\n      \"is_public\": true,\n      \"description\": \"Motion + genAI\",\n      \"links\": [\n        \"https://github.com/michal\",\n        \"https://x.com/michal\"\n      ]\n    },\n    \"folder\": {\n      \"id\": 11,\n      \"user_id\": 1,\n      \"parent_id\": 10,\n      \"name\": \"Reels\",\n      \"color\": \"#06B6D4\",\n      \"folders_count\": 0,\n      \"videos_count\": 1,\n      \"created_at\": \"2025-10-01T09:00:00Z\"\n    },\n    \"name\": \"Neon city loop\",\n    \"description\": \"Short neon loop\",\n    \"avatar\": \"https://cdn.local/thumbs/101.jpg\",\n    \"is_shared\": true,\n    \"job\": {\n      \"id\": 1001,\n      \"video_id\": 101,\n      \"video\": {\n        \"id\": 101,\n        \"name\": \"Neon city loop\"\n      },\n      \"status\": \"completed\",\n      \"progress_percentage\": 100.0,\n      \"stage\": \"upload\",\n      \"current_step\": null,\n      \"eta_seconds\": null,\n      \"error_message\": null,\n      \"file_size_bytes\": 12345678,\n      \"generation_time_seconds\": 45,\n      \"created_at\": \"2025-10-18T20:00:00Z\",\n      \"started_at\": \"2025-10-18T20:00:10Z\",\n      \"completed_at\": \"2025-10-18T20:00:55Z\"\n    },\n    \"created_at\": \"2025-10-18T20:00:00Z\"\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "1134f456-6b9b-4d61-b5f7-71aea63e223f",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "/videos/:id",
+      "responses": [
+        {
+          "uuid": "6271e694-dd09-4f60-97ea-7ebae095071c",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": null\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "9bf06577-691b-49b6-9333-f01376b135a3",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/videos/:id/share",
+      "responses": [
+        {
+          "uuid": "74443771-9311-4067-9a6f-b7d6a5b49eb7",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"shared\": true\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "64d6830a-6e7f-478d-808f-19af3caa6724",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/videos/:id/file",
+      "responses": [
+        {
+          "uuid": "589d9864-2397-491d-9839-63c1449630a6",
+          "statusCode": 200,
+          "label": "file",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "video/mp4"
+            },
+            {
+              "key": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "key": "Content-Disposition",
+              "value": "inline; filename=\"sample.mp4\""
+            }
+          ],
+          "body": "",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "filePath": "./test.mp4",
+          "bodyType": "FILE",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "a668c2cc-d78a-48c1-9173-10f74f708cf8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/storage",
+      "responses": [
+        {
+          "uuid": "3ede7a3d-ca99-4873-99b6-0711d0ef9a9d",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"current_folder\": null,\n    \"folders\": [\n      {\n        \"id\": 10,\n        \"user_id\": 1,\n        \"parent_id\": null,\n        \"parent\": null,\n        \"name\": \"Root\",\n        \"color\": \"#8B5CF6\",\n        \"folders_count\": 1,\n        \"videos_count\": 1,\n        \"created_at\": \"2025-09-01T10:00:00Z\"\n      },\n      {\n        \"id\": 11,\n        \"user_id\": 1,\n        \"parent_id\": null,\n        \"parent\": null,\n        \"name\": \"Reels\",\n        \"color\": \"#06B6D4\",\n        \"folders_count\": 0,\n        \"videos_count\": 1,\n        \"created_at\": \"2025-10-01T09:00:00Z\"\n      }\n    ],\n    \"videos\": [\n      {\n        \"id\": 101,\n        \"user_id\": 1,\n        \"folder_id\": 11,\n        \"user\": {\n          \"id\": 1,\n          \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n          \"username\": \"michal\",\n          \"full_name\": \"Michał Proc\",\n          \"email\": \"michal@example.com\",\n          \"is_active\": true,\n          \"registered_at\": \"2025-02-01T12:34:56Z\",\n          \"generations\": 5,\n          \"is_public\": true,\n          \"description\": \"Motion + genAI\",\n          \"links\": [\n            \"https://github.com/michal\",\n            \"https://x.com/michal\"\n          ]\n        },\n        \"folder\": {\n          \"id\": 11,\n          \"user_id\": 1,\n          \"parent_id\": 10,\n          \"name\": \"Reels\",\n          \"color\": \"#06B6D4\",\n          \"folders_count\": 0,\n          \"videos_count\": 1,\n          \"created_at\": \"2025-10-01T09:00:00Z\"\n        },\n        \"name\": \"Neon city loop\",\n        \"description\": \"Short neon loop\",\n        \"avatar\": \"https://cdn.local/thumbs/101.jpg\",\n        \"is_shared\": true,\n        \"job\": {\n          \"id\": 1001,\n          \"video_id\": 101,\n          \"video\": {\n            \"id\": 101,\n            \"name\": \"Neon city loop\"\n          },\n          \"status\": \"completed\",\n          \"progress_percentage\": 100.0,\n          \"stage\": \"upload\",\n          \"current_step\": null,\n          \"eta_seconds\": null,\n          \"error_message\": null,\n          \"file_size_bytes\": 12345678,\n          \"generation_time_seconds\": 45,\n          \"created_at\": \"2025-10-18T20:00:00Z\",\n          \"started_at\": \"2025-10-18T20:00:10Z\",\n          \"completed_at\": \"2025-10-18T20:00:55Z\"\n        },\n        \"created_at\": \"2025-10-18T20:00:00Z\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "219639b0-f5b2-483c-a6f0-12bcfa9675c1",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "storage/:folder_id",
+      "responses": [
+        {
+          "uuid": "8274d662-c5c8-4dd6-88d3-20d496d26247",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"current_folder\": {\n      \"id\": 11,\n      \"user_id\": 1,\n      \"parent_id\": null,\n      \"parent\": null,\n      \"name\": \"Reels\",\n      \"color\": \"#06B6D4\",\n      \"folders_count\": 0,\n      \"videos_count\": 1,\n      \"created_at\": \"2025-10-01T09:00:00Z\"\n    },\n    \"folders\": [\n      {\n        \"id\": 11,\n        \"user_id\": 1,\n        \"parent_id\": null,\n        \"parent\": null,\n        \"name\": \"Reels\",\n        \"color\": \"#06B6D4\",\n        \"folders_count\": 0,\n        \"videos_count\": 1,\n        \"created_at\": \"2025-10-01T09:00:00Z\"\n      }\n    ],\n    \"videos\": [\n      {\n        \"id\": 101,\n        \"user_id\": 1,\n        \"folder_id\": 11,\n        \"user\": {\n          \"id\": 1,\n          \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n          \"username\": \"michal\",\n          \"full_name\": \"Michał Proc\",\n          \"email\": \"michal@example.com\",\n          \"is_active\": true,\n          \"registered_at\": \"2025-02-01T12:34:56Z\",\n          \"generations\": 5,\n          \"is_public\": true,\n          \"description\": \"Motion + genAI\",\n          \"links\": [\n            \"https://github.com/michal\",\n            \"https://x.com/michal\"\n          ]\n        },\n        \"folder\": {\n          \"id\": 11,\n          \"user_id\": 1,\n          \"parent_id\": 10,\n          \"name\": \"Reels\",\n          \"color\": \"#06B6D4\",\n          \"folders_count\": 0,\n          \"videos_count\": 1,\n          \"created_at\": \"2025-10-01T09:00:00Z\"\n        },\n        \"name\": \"Neon city loop\",\n        \"description\": \"Short neon loop\",\n        \"avatar\": \"https://cdn.local/thumbs/101.jpg\",\n        \"is_shared\": true,\n        \"job\": {\n          \"id\": 1001,\n          \"video_id\": 101,\n          \"video\": {\n            \"id\": 101,\n            \"name\": \"Neon city loop\"\n          },\n          \"status\": \"completed\",\n          \"progress_percentage\": 100,\n          \"stage\": \"upload\",\n          \"current_step\": null,\n          \"eta_seconds\": null,\n          \"error_message\": null,\n          \"file_size_bytes\": 12345678,\n          \"generation_time_seconds\": 45,\n          \"created_at\": \"2025-10-18T20:00:00Z\",\n          \"started_at\": \"2025-10-18T20:00:10Z\",\n          \"completed_at\": \"2025-10-18T20:00:55Z\"\n        },\n        \"created_at\": \"2025-10-18T20:00:00Z\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "035687cd-73c2-4c9b-a063-59fa27e1cf19",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "/folders",
+      "responses": [
+        {
+          "uuid": "cedae635-b663-405c-a9ee-3100d254b553",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 11,\n    \"user_id\": 1,\n    \"parent_id\": 10,\n    \"name\": \"Reels\",\n    \"color\": \"#06B6D4\",\n    \"folders_count\": 0,\n    \"videos_count\": 1,\n    \"created_at\": \"2025-10-01T09:00:00Z\"\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "8c4178db-94bf-4466-8b72-a63371081db9",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "/folders/:id",
+      "responses": [
+        {
+          "uuid": "0657f34d-640b-4bf3-a10c-537b7bb6aa6a",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 11,\n    \"user_id\": 1,\n    \"parent_id\": 10,\n    \"name\": \"Renamed\",\n    \"color\": \"#06B6D4\",\n    \"folders_count\": 0,\n    \"videos_count\": 1,\n    \"created_at\": \"2025-10-01T09:00:00Z\"\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "63d6f811-36b5-4b6b-a8ba-065e088f3a7f",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "/folders/:id",
+      "responses": [
+        {
+          "uuid": "b9e43f8b-4595-4c04-b97a-41c6b34515d3",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": null\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "dd3b797f-2c1b-43e1-b783-fc7c347d9a77",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "/jobs",
+      "responses": [
+        {
+          "uuid": "6cd16a3e-f966-49dd-a38a-9bbd9444779b",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": 1001,\n      \"video_id\": 101,\n      \"video\": {\n        \"id\": 101,\n        \"name\": \"Neon city loop\"\n      },\n      \"status\": \"completed\",\n      \"progress_percentage\": 100.0,\n      \"stage\": \"upload\",\n      \"current_step\": null,\n      \"eta_seconds\": null,\n      \"error_message\": null,\n      \"file_size_bytes\": 12345678,\n      \"generation_time_seconds\": 45,\n      \"created_at\": \"2025-10-18T20:00:00Z\",\n      \"started_at\": \"2025-10-18T20:00:10Z\",\n      \"completed_at\": \"2025-10-18T20:00:55Z\"\n    },\n    {\n      \"id\": 1002,\n      \"video_id\": 102,\n      \"video\": {\n        \"id\": 102,\n        \"name\": \"Ocean waves\"\n      },\n      \"status\": \"processing\",\n      \"progress_percentage\": 42.5,\n      \"stage\": \"encode\",\n      \"current_step\": \"ffmpeg-pass-1\",\n      \"eta_seconds\": 120,\n      \"error_message\": null,\n      \"file_size_bytes\": null,\n      \"generation_time_seconds\": null,\n      \"created_at\": \"2025-10-19T10:00:00Z\",\n      \"started_at\": \"2025-10-19T10:00:05Z\",\n      \"completed_at\": null\n    }\n  ]\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "9b795a9c-f4c9-45ab-9ecb-30d2eb267a0f",
+      "documentation": "Example error",
+      "method": "get",
+      "endpoint": "/_error-example",
+      "responses": [
+        {
+          "uuid": "1d839e7c-46bb-4cc1-b29d-49975f23ec16",
+          "statusCode": 400,
+          "label": "error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"BAD_REQUEST\"\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "0bd16a74-0f72-40dc-bb72-685fbc819dec",
+      "type": "ws",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "ws/jobs",
+      "responses": [
+        {
+          "uuid": "4e6f6e66-a9fe-4081-994f-37009ce3b9ec",
+          "body": "{\n  \"id\": 1002,\n  \"video_id\": 102,\n  \"video\": { \"id\": 102, \"name\": \"Ocean waves\" },\n  \"status\": \"processing\",\n  \"progress_percentage\": 10,\n  \"stage\": \"encode\",\n  \"current_step\": \"ffmpeg-pass-1\",\n  \"eta_seconds\": 120,\n  \"error_message\": null,\n  \"file_size_bytes\": null,\n  \"generation_time_seconds\": null,\n  \"parameters\": {\n    \"prompt\": \"calm ocean waves, blue tones\",\n    \"negative_prompt\": \"noise, artifacts\",\n    \"heigth\": 720,\n    \"width\": 1280,\n    \"fps\": 30\n  },\n  \"created_at\": \"2025-10-19T10:00:00Z\",\n  \"started_at\": \"2025-10-19T10:00:05Z\",\n  \"completed_at\": null\n}",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": "SEQUENTIAL",
+      "streamingMode": "UNICAST",
+      "streamingInterval": 1000
+    },
+    {
+      "uuid": "0acc7c61-2011-47c6-966a-c5b580c4211a",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "auth/refresh",
+      "responses": [
+        {
+          "uuid": "9e2f484e-4882-4504-b29c-1bbc660120f2",
+          "statusCode": 200,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": 1,\n    \"avatar\": \"https://cdn.local/avatars/1.jpg\",\n    \"username\": \"michal\",\n    \"full_name\": \"Michał Proc\",\n    \"email\": \"michal@example.com\",\n    \"is_active\": true,\n    \"registered_at\": \"2025-02-01T12:34:56Z\",\n    \"generations\": 5,\n    \"is_public\": true,\n    \"description\": \"Motion + genAI\",\n    \"links\": [\n      \"https://github.com/michal\",\n      \"https://x.com/michal\"\n    ]\n  }\n}",
+          "latency": 0,
+          "rules": [],
+          "disableTemplating": false,
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "type": "http",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "data": [],
+  "rootChildren": [
+    {
+      "type": "folder",
+      "uuid": "91b604e1-e8c3-4744-bbfe-410701fdc78d"
+    },
+    {
+      "type": "folder",
+      "uuid": "873ee7e4-5d32-4cdd-8a09-fc75efd171d8"
+    },
+    {
+      "type": "folder",
+      "uuid": "ce631237-f3d1-4f56-bb2f-d770ccfff311"
+    },
+    {
+      "type": "folder",
+      "uuid": "5e2c581e-ff4f-4616-a68b-bfbf8b88399f"
+    },
+    {
+      "type": "folder",
+      "uuid": "f05641b0-ee13-4e04-8d22-8fd6460d8270"
+    },
+    {
+      "type": "folder",
+      "uuid": "0bdb9996-fb2d-4387-88c9-524232539746"
+    },
+    {
+      "type": "folder",
+      "uuid": "ea32d67f-7943-4504-8c9d-eff6a518a195"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "lastMigration": 33,
+  "folders": [
+    {
+      "uuid": "91b604e1-e8c3-4744-bbfe-410701fdc78d",
+      "name": "Auth",
+      "children": [
+        {
+          "type": "route",
+          "uuid": "e8af8e97-2b20-42b9-b002-c965995357fd"
+        },
+        {
+          "type": "route",
+          "uuid": "56061319-f6c1-4b58-97fe-39f28da4bfbe"
+        },
+        {
+          "type": "route",
+          "uuid": "0acc7c61-2011-47c6-966a-c5b580c4211a"
+        },
+        {
+          "type": "route",
+          "uuid": "45b95ec0-84c2-46fc-ac8e-b66eb50da4a1"
+        },
+        {
+          "type": "route",
+          "uuid": "34a2acc5-09b0-40b1-8b9a-b2e24cbac0b3"
+        },
+        {
+          "type": "route",
+          "uuid": "d36da5b7-4b6a-40ad-b351-1093682669d2"
+        },
+        {
+          "type": "route",
+          "uuid": "9eab9089-d618-4e83-b350-849718387a60"
+        },
+        {
+          "type": "route",
+          "uuid": "d892184c-75ed-4a36-a89f-a3c0897fe109"
+        }
+      ]
+    },
+    {
+      "uuid": "873ee7e4-5d32-4cdd-8a09-fc75efd171d8",
+      "name": "Users",
+      "children": [
+        {
+          "type": "route",
+          "uuid": "77304a6e-02a3-4807-abff-3231d822619f"
+        },
+        {
+          "type": "route",
+          "uuid": "4f9862a4-86f0-4072-9ab3-83bfa7d93374"
+        },
+        {
+          "type": "route",
+          "uuid": "7a9544d7-fc1d-4939-874e-2795a295415f"
+        },
+        {
+          "type": "route",
+          "uuid": "7ae3dde9-fb21-477c-900b-c5c8794f88ca"
+        },
+        {
+          "type": "route",
+          "uuid": "c3744c4c-7616-4cf3-b2f4-d649e92d4d90"
+        }
+      ]
+    },
+    {
+      "uuid": "ce631237-f3d1-4f56-bb2f-d770ccfff311",
+      "name": "Videos",
+      "children": [
+        {
+          "type": "route",
+          "uuid": "6913bfdd-f5b6-4ebc-a121-cd5fbce4d7b2"
+        },
+        {
+          "type": "route",
+          "uuid": "b5b49fcd-44c2-4ba0-857b-901ab1aee5d7"
+        },
+        {
+          "type": "route",
+          "uuid": "5bf56b97-e1b1-40e9-bd13-71a30c13b993"
+        },
+        {
+          "type": "route",
+          "uuid": "1d17aead-4dcb-426d-ac69-b2ec844b0814"
+        },
+        {
+          "type": "route",
+          "uuid": "1134f456-6b9b-4d61-b5f7-71aea63e223f"
+        },
+        {
+          "type": "route",
+          "uuid": "9bf06577-691b-49b6-9333-f01376b135a3"
+        },
+        {
+          "type": "route",
+          "uuid": "64d6830a-6e7f-478d-808f-19af3caa6724"
+        }
+      ]
+    },
+    {
+      "uuid": "5e2c581e-ff4f-4616-a68b-bfbf8b88399f",
+      "name": "Storage",
+      "children": [
+        {
+          "type": "route",
+          "uuid": "a668c2cc-d78a-48c1-9173-10f74f708cf8"
+        },
+        {
+          "type": "route",
+          "uuid": "219639b0-f5b2-483c-a6f0-12bcfa9675c1"
+        }
+      ]
+    },
+    {
+      "uuid": "f05641b0-ee13-4e04-8d22-8fd6460d8270",
+      "name": "Folders",
+      "children": [
+        {
+          "type": "route",
+          "uuid": "035687cd-73c2-4c9b-a063-59fa27e1cf19"
+        },
+        {
+          "type": "route",
+          "uuid": "8c4178db-94bf-4466-8b72-a63371081db9"
+        },
+        {
+          "type": "route",
+          "uuid": "63d6f811-36b5-4b6b-a8ba-065e088f3a7f"
+        }
+      ]
+    },
+    {
+      "uuid": "ea32d67f-7943-4504-8c9d-eff6a518a195",
+      "name": "Error",
+      "children": [
+        {
+          "type": "route",
+          "uuid": "9b795a9c-f4c9-45ab-9ecb-30d2eb267a0f"
+        }
+      ]
+    },
+    {
+      "uuid": "0bdb9996-fb2d-4387-88c9-524232539746",
+      "name": "Jobs",
+      "children": [
+        {
+          "type": "route",
+          "uuid": "dd3b797f-2c1b-43e1-b783-fc7c347d9a77"
+        },
+        {
+          "type": "route",
+          "uuid": "0bd16a74-0f72-40dc-bb72-685fbc819dec"
+        }
+      ]
+    }
+  ],
+  "proxyHost": "",
+  "callbacks": []
+}

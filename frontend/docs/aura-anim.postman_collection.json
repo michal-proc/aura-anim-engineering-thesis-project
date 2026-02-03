@@ -1,0 +1,496 @@
+{
+  "info": {
+    "_postman_id": "da4ca02f-a565-4499-8393-5ed13a99e109",
+    "name": "AuraAnim",
+    "description": "Postman collection for Aura Anim API with CRUD-style names. Uses {{BACKEND_URL}}.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15737878"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nickname\": \"michal\",\n  \"password\": \"secret123\"\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/auth/login",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"michal@example.com\",\n  \"username\": \"michal\",\n  \"password\": \"secret123\",\n  \"full_name\": \"Michał Proc\"\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/auth/register",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forgot Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"michal@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/auth/forgot-password",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["auth", "forgot-password"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reset Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"token\": \"RESET_TOKEN_PLACEHOLDER\",\n  \"password\": \"newSecret123\"\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/auth/reset-password",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["auth", "reset-password"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/auth/me",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["auth", "me"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{BACKEND_URL}}/auth/logout",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["auth", "logout"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify Email (302 redirect)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/auth/verify-email",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["auth", "verify-email"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Index Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/users",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/users/1",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["users", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"michal@example.com\",\n  \"username\": \"michal\",\n  \"password\": \"newSecret123\",\n  \"full_name\": \"Michał Proc\",\n  \"is_public\": true,\n  \"description\": \"Motion + genAI\",\n  \"links\": [\n    \"https://github.com/michal\",\n    \"https://x.com/michal\"\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/users/1",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["users", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/users/1",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["users", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Analytics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/users/1/analytics",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["users", "1", "analytics"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Folders",
+      "item": [
+        {
+          "name": "Get Folder",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/folder/11",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["folder", "11"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Folder",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Reels\",\n  \"color\": \"#06B6D4\",\n  \"parent_id\": 10\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/folders",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["folders"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Folder",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Reels (renamed)\",\n  \"color\": \"#0EA5E9\",\n  \"parent_id\": 10,\n  \"folderIds\": [\n    12,\n    13\n  ],\n  \"videoIds\": [\n    101,\n    102\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/folders/11",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["folders", "11"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Folder",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/folders/11",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["folders", "11"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "item": [
+        {
+          "name": "Index Storage",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/storage",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["storage"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Storage Folder",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/storage/11",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["storage", "11"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Videos",
+      "item": [
+        {
+          "name": "Index Videos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/videos",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["videos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Video",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/videos/101",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["videos", "101"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Video",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Neon city loop\",\n  \"prompt\": \"neon rain city, cyberpunk, loop\",\n  \"negative_prompt\": \"low quality, blurry\",\n  \"heigth\": 1080,\n  \"width\": 1920,\n  \"fps\": 24\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/videos",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["videos"]
+            },
+            "description": "Returns full Video with pending Job"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Video",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Neon city loop v2\",\n  \"description\": \"Short neon loop (remastered)\",\n  \"folder_id\": 11,\n  \"is_shared\": true\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/videos/101",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["videos", "101"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Video",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/videos/101",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["videos", "101"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Share Video",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"platforms\": [\n    \"wall\",\n    \"facebook\",\n    \"instagram\"\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND_URL}}/videos/101/share",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["videos", "101", "share"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Video File",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/videos/101/file",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["videos", "101", "file"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "Index Jobs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/jobs",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["jobs"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Connect Jobs WebSocket (manual)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BACKEND_URL}}/ws/jobs",
+              "host": ["{{BACKEND_URL}}"],
+              "path": ["ws", "jobs"]
+            },
+            "description": "Use Postman WebSocket request: ws://localhost:4010/ws/jobs (or ws://{{BACKEND_URL_HOST}}/ws/jobs)"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "BACKEND_URL",
+      "value": "http://localhost:4010",
+      "type": "string"
+    }
+  ]
+}

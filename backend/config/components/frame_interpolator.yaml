@@ -1,0 +1,4 @@
+model_path: 'backend/weights/film_net_fp16.pt'
+model_download_url: 'https://github.com/dajes/frame-interpolation-pytorch/releases/download/v1.0.2/film_net_fp16.pt'
+default_fps_factor: 2
+device: null

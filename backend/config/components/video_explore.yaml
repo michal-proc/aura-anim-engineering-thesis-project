@@ -1,0 +1,16 @@
+videos:
+  - name: "Boat Floating on Water"
+    prompt: "A calm scene of a small boat gently floating on water"
+    file_name: "boat_floats.mp4"
+
+  - name: "Cute Corgi Running"
+    prompt: "A playful corgi running happily outdoors"
+    file_name: "corgi.mp4"
+
+  - name: "Rocket Launch"
+    prompt: "A rocket launching with powerful flames and smoke"
+    file_name: "rocket.mp4"
+
+  - name: "Waves on the Sea"
+    prompt: "Relaxing waves moving rhythmically across the sea surface"
+    file_name: "sea.mp4"

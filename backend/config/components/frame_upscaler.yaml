@@ -1,0 +1,14 @@
+device: null
+supported_scales: [2, 4, 8]
+model_path: 'backend/utils/RealESRGAN'
+model_download_url: 'https://github.com/ai-forever/Real-ESRGAN.git'
+
+weights_download_urls:
+  2: "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+  4: "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth"
+  8: "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x8.pth"
+
+weights_paths:
+  2: "backend/weights/RealESRGAN_x2.pth"
+  4: "backend/weights/RealESRGAN_x4.pth"
+  8: "backend/weights/RealESRGAN_x8.pth"

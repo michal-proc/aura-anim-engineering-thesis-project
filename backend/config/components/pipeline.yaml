@@ -1,0 +1,8 @@
+logging_enabled: true
+output_dir: 'outputs'
+progress_percentages:
+  preprocessing: 1
+  generation: 70
+  interpolation: 14
+  upscaling: 14
+  saving: 1

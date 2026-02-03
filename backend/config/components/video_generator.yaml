@@ -1,0 +1,48 @@
+base_models:
+  sd15:
+    name: 'runwayml/stable-diffusion-v1-5'
+    variant: 'fp16'
+  sd21:
+    name: 'stabilityai/stable-diffusion-2-1'
+    variant: 'fp16'
+  epicrealism:
+    name: 'emilianJR/epiCRealism'
+    variant: ''
+  realistic_vision:
+    name: 'SG161222/Realistic_Vision_V5.1_noVAE'
+    variant: ''
+  dreamshaper:
+    name: 'Lykon/DreamShaper-8'
+    variant: 'fp16'
+  juggernaut:
+    name: 'digiplay/Juggernaut_final'
+    variant: ''
+  rev_animated:
+    name: 'stablediffusionapi/rev-animated'
+    variant: ''
+
+motion_adapters:
+  default: 'guoyww/animatediff-motion-adapter-v1-5-2'
+
+lora_presets:
+  zoom-in:
+    id: 'guoyww/animatediff-motion-lora-zoom-in'
+  zoom-out:
+    id: 'guoyww/animatediff-motion-lora-zoom-out'
+  pan-left:
+    id: 'guoyww/animatediff-motion-lora-pan-left'
+  pan-right:
+    id: 'guoyww/animatediff-motion-lora-pan-right'
+  tilt-up:
+    id: 'guoyww/animatediff-motion-lora-tilt-up'
+  tilt-down:
+    id: 'guoyww/animatediff-motion-lora-tilt-down'
+  rolling-anticlockwise:
+    id: 'guoyww/animatediff-motion-lora-rolling-anticlockwise'
+  rolling-clockwise:
+    id: 'guoyww/animatediff-motion-lora-rolling-clockwise'
+
+enable_free_noise: true
+free_noise_context_length: 16
+free_noise_context_stride: 4
+dimension_alignment: 8

@@ -1,0 +1,23 @@
+supported_formats: ['mp4', 'gif', 'avi', 'mov', 'webm']
+default_format: 'mp4'
+
+format_settings:
+  mp4:
+    codec: 'libx264'
+    quality: 8
+    extra_params: ['-movflags', '+faststart']
+  gif:
+    optimize: true
+    loop: 0
+  avi:
+    codec: 'libx264'
+    quality: 8
+    extra_params: []
+  mov:
+    codec: 'libx264'
+    quality: 8
+    extra_params: ['-movflags', '+faststart']
+  webm:
+    codec: 'libvpx-vp9'
+    quality: 6
+    extra_params: ['-deadline', 'good']
